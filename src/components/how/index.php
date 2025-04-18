@@ -2,9 +2,9 @@
 /** @var array $arParams */
 /** @var array $arResult */
 ?>
-<div class="how">
+<div class="how" data-steps>
     <? foreach ($arResult as $key => $i): ?>
-        <div class="how__step <? if($key==0): ?>active<? endif; ?>" data-steps-next="<?= $i['next'] ?>">
+        <div class="how__step <? if($key==0): ?>active<? endif; ?>" data-step="<?= $key+1; ?>" data-steps-next="<?= $i['next'] ?>">
             <div class="how__left">
                 <div class="how__num">
                     <?= $key + 1 ?>

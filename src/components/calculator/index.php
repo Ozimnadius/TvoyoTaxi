@@ -2,7 +2,7 @@
 /** @var array $arParams */
 /** @var array $arResult */
 ?>
-<div class="calculator">
+<div class="calculator" >
     <div class="calculator__top">
         <h2 class="calculator__title">
             Калькулятор
@@ -12,11 +12,18 @@
             Данные основаны на средних показателях за март 2025
         </div>
     </div>
-    <form action="#" class="calculator__form">
+    <form action="#"
+          class="calculator__form"
+          data-calculator
+    >
         <div class="calculator__cars">
             <div class="calculator__select-wrapper">
-                <select class="calculator__select" name="mark" autocomplete="off">
-                    <option>Выбрать марку</option>
+                <select class="calculator__select"
+                        name="mark"
+                        autocomplete="off"
+                        data-calculator-mark
+                >
+                    <option value="">Выбрать марку</option>
                     <option>Skoda</option>
                     <option>Kia</option>
                     <option>Volkswagen</option>
@@ -32,8 +39,12 @@
                 </select>
             </div>
             <div class="calculator__select-wrapper">
-                <select class="calculator__select" name="model" autocomplete="off">
-                    <option value="0">Выбрать модель авто</option>
+                <select class="calculator__select"
+                        name="model"
+                        autocomplete="off"
+                        data-calculator-model
+                >
+                    <option value="">Выбрать модель авто</option>
                     <option>Rio</option>
                     <option>Cerato</option>
                     <option>Ceed 2020</option>
@@ -80,9 +91,11 @@
                             Выберите авто этого класса
                         </div>
                         <input class="calculator-tarrif__value h3"
+                               name="econom"
                                type="text"
-                               value="17 600₽"
+                               value=""
                                required
+                               data-calculator-result
                         >
                     </div>
                 </div>
@@ -97,8 +110,10 @@
                         </div>
                         <input class="calculator-tarrif__value h3"
                                type="text"
+                               name="comfort"
                                value=""
                                required
+                               data-calculator-result
                         >
                     </div>
                 </div>
@@ -113,8 +128,10 @@
                         </div>
                         <input class="calculator-tarrif__value h3"
                                type="text"
+                               name="comfort-plus"
                                value=""
                                required
+                               data-calculator-result
                         >
                     </div>
                 </div>

@@ -1,5 +1,7 @@
 window.addEventListener('DOMContentLoaded', function () {
     new Events();
+    new Calculator();
+    new Steps();
 
     initSliders();
     initValidators();
@@ -11,40 +13,40 @@ function initLibs() {
 }
 
 function initSliders() {
-   document.querySelectorAll('.banner').forEach(e=>{
-       const swiper = new Swiper(e.querySelector('.swiper'), {
-           slidesPerView: 1.2,
-           centeredSlides: true,
-           spaceBetween: 0,
-           initialSlide: 1,
-           loop: true,
-           speed: 700,
-           pagination: {
-               el: e.querySelector('.banner__pag'),
-               bulletActiveClass: 'active',
-               bulletClass: 'banner__bullet',
-           },
-           navigation: {
-               nextEl: e.querySelector('.banner__prev'),
-               prevEl: e.querySelector('.banner__next'),
-           },
-           autoplay: {
-               delay: 5000,
-           },
-           breakpoints: {
-               // when window width is >= 768px
-               768: {
-                   slidesPerView: 1.5,
-                   spaceBetween: 20
-               },
-               // when window width is >= 1024px
-               1024: {
-                   slidesPerView: 1.7,
-                   spaceBetween: 20
-               }
-           }
-       });
-   });
+    document.querySelectorAll('.banner').forEach(e => {
+        const swiper = new Swiper(e.querySelector('.swiper'), {
+            slidesPerView: 1.2,
+            centeredSlides: true,
+            spaceBetween: 0,
+            initialSlide: 1,
+            loop: true,
+            speed: 700,
+            pagination: {
+                el: e.querySelector('.banner__pag'),
+                bulletActiveClass: 'active',
+                bulletClass: 'banner__bullet',
+            },
+            navigation: {
+                nextEl: e.querySelector('.banner__prev'),
+                prevEl: e.querySelector('.banner__next'),
+            },
+            autoplay: {
+                delay: 5000,
+            },
+            breakpoints: {
+                // when window width is >= 768px
+                768: {
+                    slidesPerView: 1.5,
+                    spaceBetween: 20
+                },
+                // when window width is >= 1024px
+                1024: {
+                    slidesPerView: 1.7,
+                    spaceBetween: 20
+                }
+            }
+        });
+    });
 }
 
 function initValidators() {
@@ -124,5 +126,82 @@ class Events {
         });
     }
 
+}
+
+class Calculator {
+
+    selectors = {
+        root: '[data-calculator]',
+        mark: '[data-calculator-mark]',
+        model: '[data-calculator-model]',
+        resultItems: '[data-calculator-result]',
+    }
+
+    constructor() {
+        this.root = document.querySelector(this.selectors.root);
+
+        this.bindEvents();
+
+
+    }
+
+    bindEvents() {
+        this.root.addEventListener('change', e => {
+            console.log(this.formData);
+            console.log(this.mark);
+            console.log(this.model);
+            console.log(this.day);
+            console.log(this.hour);
+        });
+    }
+
+    get formData() {
+        return new FormData(this.root);
+    }
+
+    get mark() {
+        return this.formData.get('mark');
+    }
+
+    get model() {
+        return this.formData.get('model');
+    }
+
+    get day() {
+        return this.formData.get('day');
+    }
+
+    get hour() {
+        return this.formData.get('hour');
+    }
+
+}
+
+class Steps{
+    selectors= {
+      root: '[data-steps]',
+      steps: '[data-step]',
+    };
+    constructor() {
+        this.root = document.querySelector(this.selectors.root);
+        this.stepElems = this.root.querySelectorAll(this.selectors.steps);
+
+        this.bindEvents();
+    }
+
+    bindEvents() {
+        this.stepElems.forEach((step)=>{
+            step.addEventListener('click', e=>{
+                this.nextStep(e.currentTarget.dataset.stepsNext);
+            });
+        });
+    }
+
+    nextStep(id) {
+        this.stepElems.forEach((step)=>{
+            step.classList.remove('active');
+        });
+        this.root.querySelector(`[data-step="${id}"]`).classList.add('active');
+    }
 }
 
