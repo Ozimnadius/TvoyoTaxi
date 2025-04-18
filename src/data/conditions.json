@@ -1,0 +1,26 @@
+[
+  {
+    "img": "/upload/images/conditions/1.webp",
+    "icon" : "/upload/images/conditions/time.webp",
+    "name": "Комиссия парка",
+    "desc": "Вы не платите комиссию парка или минимальную комиссию, только ежедневный платеж по договору обеспечения 150 руб./день"
+  },
+  {
+    "img": "/upload/images/conditions/2.webp",
+    "icon" : "/upload/images/conditions/location.webp",
+    "name": "Выходной",
+    "desc": "Для отдыха Вы можете\nоформить 2 выходных в\nнеделю со скидкой 50% на\nаренду"
+  },
+  {
+    "img": "/upload/images/conditions/3.webp",
+    "icon" : "/upload/images/conditions/planing.webp",
+    "name": "Посуточная\nаренда",
+    "desc": "Вам не нужно вносить\nпредоплату за несколько\nдней вперед"
+  },
+  {
+    "img": "/upload/images/conditions/4.webp",
+    "icon" : "/upload/images/conditions/garage.webp",
+    "name": "Хранение\nавто",
+    "desc": "У парка большая крытая\nпарковка, автомобили\nвыдают чистыми после\nмойки в теплом, крытом\nпомещении"
+  }
+]

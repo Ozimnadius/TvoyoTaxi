@@ -1,0 +1,14 @@
+[
+  {
+    "icon": "upload/images/requirements/wheel.webp",
+    "name": "Водительский <br> стаж - от 3-х лет"
+  },
+  {
+    "icon": "upload/images/requirements/user.webp",
+    "name": "Минимальный возраст <br> водителя - 23 года"
+  },
+  {
+    "icon": "upload/images/requirements/passport.webp",
+    "name": "Гражданство - Россия, <br> Беларусь, Казахстан, Киргизия"
+  }
+]

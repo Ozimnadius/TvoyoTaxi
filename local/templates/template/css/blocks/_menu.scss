@@ -1,0 +1,18 @@
+@use "../helpers/index" as *;
+
+.menu{
+  ul{
+    display: flex;
+    li{
+      padding: 8px 24px;
+      font-weight: 500;
+      color: var(--color-dark);
+      @include hover{
+        color: var(--color-red);
+      };
+      @include xs-block{
+        font-size: 14px;
+      };
+    }
+  }
+}

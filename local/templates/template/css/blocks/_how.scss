@@ -1,0 +1,124 @@
+@use "../helpers/index" as *;
+
+.how {
+  position: relative;
+
+  &__step {
+    border-radius: 30px;
+    background: var(--color-light);
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 119px 1fr;
+    gap: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+    pointer-events: none;
+    @include tr;
+    @include sm-block {
+      padding: 20px;
+      grid-template-columns: 100%;
+      gap: 20px;
+    }
+  ;
+
+    &.active {
+      position: static;
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  &__left {
+    display: grid;
+    align-items: start;
+    gap: 20px;
+    @include sm-block {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  ;
+  }
+
+  &__num {
+    border-radius: 16px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--color-accent);
+
+    font-family: var(--second-family);
+    font-size: 60px;
+    line-height: 1.5;
+    @include sm-block {
+      border-radius: 16px;
+      width: 60px;
+      padding: 10px 0;
+      font-size: 20px;
+    }
+  ;
+  }
+
+  &__next {
+    width: 100%;
+    border-radius: 100vmax;
+    padding: 10px 13px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--color-accent);
+
+    font-family: var(--second-family);
+    font-size: 20px;
+    line-height: 130%;
+    @include sm-block {
+      width: auto;
+    }
+  }
+
+  &__right {
+    display: grid;
+    grid-template-columns: 1fr 52px;
+    grid-template-areas: 'title arrow' 'desc arrow';
+    gap: 20px 80px;
+    align-items: center;
+    align-content: center;
+    @include sm-block {
+      gap: 20px;
+    }
+  ;
+  }
+
+  &__title {
+    grid-area: title;
+    font-weight: 700;
+    font-size: 31px;
+    line-height: 1;
+    align-self: end;
+    @include sm-block {
+      font-size: 26px;
+    }
+  ;
+  }
+
+  &__desc {
+    grid-area: desc;
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 134%;
+    align-self: start;
+    @include sm-block {
+      font-size: 20px;
+    }
+  ;
+  }
+
+  &__arrow {
+    grid-area: arrow;
+  }
+}

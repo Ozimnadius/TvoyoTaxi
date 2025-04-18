@@ -1,0 +1,21 @@
+@use "../helpers/index" as *;
+
+.socials{
+  display:flex;
+  gap: 10px;
+  @include xs-block{
+    gap: 4px;
+  };
+
+  &__link{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    @include hover{
+      color: var(--color-red);
+    };
+    @include xs-block{
+      width: 24px;
+    };
+  }
+}

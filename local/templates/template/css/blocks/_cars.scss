@@ -1,0 +1,254 @@
+@use "../helpers/index" as *;
+
+.cars {
+  display: grid;
+  gap: 20px;
+
+  &__top {
+    border-radius: 30px 30px 10px 10px;
+    padding: 20px 50px;
+    background: var(--color-light);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include sm-block {
+      flex-direction: column;
+      gap: 20px;
+    }
+    @include xs-block {
+      padding: 20px;
+    }
+  ;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  &__btn {
+    border: 1px solid #cbcbcb;
+    border-radius: 100vmax;
+    padding: 8px 25px;
+
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1;
+    @include tr;
+    @include xs-block {
+      font-size: 16px;
+    }
+  ;
+
+    &.active {
+      background: var(--color-accent-10);
+      border-color: var(--color-accent-10);
+    }
+  }
+
+  &__list {
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    @include md-block {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include xs-block {
+      grid-template-columns: 100%;
+    }
+
+  }
+
+  &__item {
+    order: 2;
+
+    &:nth-child(-n+4) {
+      order: 0;
+      @include md-block {
+        order: 2;
+      }
+    ;
+    }
+
+    &:nth-child(-n+3) {
+      @include md-block {
+        order: 0;
+      }
+    ;
+    }
+
+    &--full {
+      order: 1;
+      grid-column: span 4;
+      @include md-block {
+        grid-column: span 3;
+      }
+      @include xs-block {
+        grid-column: span 1;
+      }
+    }
+  }
+}
+
+.car {
+  border-radius: 10px;
+  padding: 14px;
+  background: var(--color-light);
+  display: grid;
+  gap: 12px;
+
+  &__top {
+    border-radius: 100vmax;
+    padding: 0px 10px 0px 0px;
+    background: #f1f1f1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--color-dark);
+  }
+
+  &__type {
+    border: 1px solid #d6d6d6;
+    border-radius: 100vmax;
+    padding: 4px 18px;
+    background: var(--color-light);
+
+    font-size: 14px;
+    line-height: 150%;
+    @include sm-block {
+      padding-inline: 14px;
+    }
+  ;
+  }
+
+  &__price {
+    font-size: 16px;
+    line-height: 105%;
+    @include sm-block {
+      font-size: 12px;
+    }
+  ;
+    @include xs-block {
+      font-size: 16px;
+    }
+  ;
+  }
+
+  &__name {
+    font-size: 20px;
+    line-height: 1;
+    color: var(--color-dark-20);
+    @include sm-block {
+      font-size: 16px;
+    }
+  ;
+    @include xs-block {
+      font-size: 20px;
+    }
+  ;
+  }
+
+  &__year {
+    line-height: 1;
+    color: var(--color-grey-20);
+    margin-top: 8px;
+    @include sm-block {
+      margin-top: 4px;
+      font-size: 14px;
+    }
+  ;
+    @include xs-block {
+      font-size: 16px;
+      margin-top: 8px;
+    }
+  ;
+  }
+
+  &__img {
+    aspect-ratio: 251/204;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__stick {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    translate: -50% 0;
+    white-space: nowrap;
+
+    border-radius: 20px 20px 0 0;
+    padding: 10px 20px;
+
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--color-dark);
+    background: linear-gradient(135deg, #ffff62 0%, #99f6c0 100%);
+  }
+
+  &__bottom {
+    display: grid;
+    gap: 8px;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 12px;
+    line-height: 1;
+    color: var(--color-grey-20);
+  }
+
+  &__driver-type {
+    color: var(--color-green);
+  }
+
+  &__tarrifs {
+    border-radius: 6px;
+    padding: 12px 0;
+    background: #f1f1f1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__tarrif {
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+
+    &:first-child {
+      border-right: 1px solid #b6b6b6;
+    }
+  }
+
+}
+
+.car-banner {
+  border-radius: 70px;
+  overflow: hidden;
+  @include md-block {
+    border-radius: 20px;
+  };
+  @include xs-block{
+    border-radius: 10px;
+  };
+
+}

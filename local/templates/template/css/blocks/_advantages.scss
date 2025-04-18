@@ -1,0 +1,104 @@
+@use "../helpers/index" as *;
+
+.advantages{
+  display:grid;
+  gap: 20px;
+
+  &__top{
+    border-radius: 30px 30px 10px 10px;
+    padding: 25px 46px;
+    background: var(--color-light);
+    display: grid;
+    grid-template-columns: 249px 1fr 1fr;
+    grid-template-areas: 'img title desc';
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+
+    @include md-block{
+      grid-template-columns: 159px 1fr;
+      grid-template-areas: 'img title' 'img desc';
+      gap: 10px 25px;
+      padding: 20px;
+    };
+    @include xs-block{
+      grid-template-columns: 100%;
+      grid-template-areas: 'img' 'title' 'desc';
+      gap: 15px;
+    };
+  }
+
+  &__img{
+    grid-area: img;
+    @include xs-block{
+      width: 160px;
+    };
+  }
+
+  &__title{
+    grid-area: title;
+    @include md-block{
+      font-size: 17px;
+    };
+  }
+
+  &__desc{
+    grid-area: desc;
+    @include md-block{
+      font-size: 14px;
+    };
+  }
+
+  &__list{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    @include sm-block{
+      grid-template-columns: repeat(2,1fr);
+    };
+    @include xs-block{
+      grid-template-columns: 100%;
+    };
+  }
+
+  &__item{
+    &>*{
+      height: 100%;
+    }
+  }
+}
+
+.advantages-item{
+  border-radius: 10px;
+  background: var(--color-light);
+  padding: 20px 40px 40px 20px;
+
+  display:grid;
+  grid-template-columns: 86px 1fr;
+  gap: 20px;
+  grid-template-areas: 'icon name' 'desc desc';
+  align-items: center;
+  @include md-block{
+    padding-right: 20px;
+  };
+
+  &__icon{
+    grid-area: icon;
+  }
+
+  &__name{
+    grid-area: name;
+    font-size: 24px;
+    line-height: 108%;
+    color: var(--color-dark-20);
+    @include xs-block{
+      font-size: 20px;
+    };
+  }
+
+  &__desc{
+    grid-area: desc;
+    color: var(--color-grey-10);
+  }
+
+}

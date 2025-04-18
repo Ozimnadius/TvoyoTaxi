@@ -1,0 +1,31 @@
+@use "../helpers" as *;
+
+html{
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-light-10);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+  color: var(--color-dark-10);
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+}
+
+.wrapper {
+  padding-top: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    flex-grow: 1;
+  }
+}
+
+
+

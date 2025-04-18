@@ -1,0 +1,12 @@
+[
+  {
+    "icon": "/upload/images/tg.svg",
+    "name": "Телеграм",
+    "url": "/"
+  },
+  {
+    "icon": "/upload/images/wa.svg",
+    "name": "Ватсап",
+    "url": "/"
+  }
+]

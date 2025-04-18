@@ -1,0 +1,108 @@
+@use "../helpers/index" as *;
+
+.requirements{
+  border-radius: 30px;
+  padding: 40px 0;
+  background: var(--color-light);
+  display:grid;
+  grid-template-columns: repeat(4,1fr);
+  @include md-block{
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px 0;
+  };
+  @include sm-block{
+    padding: 20px 0;
+  };
+  @include xs-block{
+    grid-template-columns: 100%;
+    gap: 10px;
+  };
+
+  &__item{
+    border-right: 1px solid rgba(154, 154, 154, 0.5);
+    display: flex;
+    justify-content: center;
+    @include xs-block{
+      border: none;
+    };
+
+    &:first-child{
+      @include md-block{
+        grid-column: span 3;
+        border: none;
+        justify-content: start;
+      };
+      @include xs-block{
+        grid-column: span 1;
+      };
+    }
+
+    &:last-child{
+      border: none;
+    }
+  }
+
+  &__info{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 40px;
+    @include md-block{
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+    };
+    @include sm-block{
+      padding: 0 20px;
+    };
+    @include xs-block{
+      width: 100%;
+      flex-direction: column;
+      align-items: start;
+    };
+  }
+
+  &__logo{
+    width: 159px;
+    img{
+      width: 100%;
+    }
+  }
+
+  &__title{
+    font-family: var(--second-family);
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 120%;
+    color: var(--color-dark);
+    @include xs-block{
+      align-self: center;
+      text-align: center;
+    };
+  }
+
+}
+
+.requirements-item{
+  padding: 0 30px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  @include sm-block{
+    padding: 0 20px;
+  };
+
+  &__icon{
+    width: 70px;
+  }
+
+  &__name{
+    font-family: var(--second-family);
+    font-size: 18px;
+    color: var(--color-dark);
+  }
+
+};

@@ -1,0 +1,62 @@
+@use "../helpers" as *;
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6,
+{
+  color: var(--color-dark-20);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+h1, .h1 {
+  font-size: 70px;
+}
+
+h2, .h2 {
+  font-size: 60px;
+  @include sm-block{
+    font-size: 40px;
+  };
+  @include xs-block{
+    font-size: 24px;
+  };
+}
+
+h3, .h3 {
+  font-size: 40px;
+}
+
+h4, .h4 {
+  font-size: 36px;
+  @include xs-block{
+    font-size: 24px;
+  }
+}
+
+h5, .h5 {
+  font-size: 24px;
+}
+
+h6, .h6 {
+  font-size: 18px;
+}
+
+button{
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  padding: var(--container-padding);
+  margin: 0 auto;
+}
+
+.page {
+  overflow: hidden;
+}
+

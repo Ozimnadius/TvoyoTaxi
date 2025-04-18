@@ -1,0 +1,169 @@
+@use "../helpers" as *;
+
+.banner {
+  border-radius: 30px;
+  background: var(--color-light);
+  padding-block: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include xs-block {
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+;
+
+  &__swiper {
+    width: 100%;
+  }
+
+  &__slide {
+    @include sm-block {
+      padding-top: 60px;
+    }
+  ;
+    @include xs-block {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      padding-top: 0;
+    }
+  ;
+
+    &:before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: linear-gradient(90deg, rgba(#fff, 1) 0%, rgba(#fff, 0.7) 50%, rgba(#fff, 1) 100%);
+      @include tr;
+      @include xs-block {
+        background: linear-gradient(90deg, rgba(#fff, 0.9) 0%, rgba(#fff, 0.5) 50%, rgba(#fff, 0.9) 100%);
+      }
+    ;
+    }
+
+    &.swiper-slide-active {
+      &:before {
+        opacity: 0;
+      }
+    }
+
+
+  }
+
+  &__info {
+    border-radius: 23px 23px 0 23px;
+    padding: 15px;
+    background: linear-gradient(119deg, #fe0 0%, #ffc022 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 18px;
+    @include xs-block {
+      position: static;
+    }
+  ;
+  }
+
+  &__nav {
+    position: absolute;
+    z-index: 10;
+    top: 60px;
+    right: 20%;
+    @include md-block {
+      right: 16%;
+    }
+  ;
+    @include sm-block {
+      top: 20px;
+      right: 20px;
+    }
+  ;
+    @include xs-block {
+      display: none;
+    }
+  ;
+  }
+
+  &__btn {
+    color: #dcdcdc;
+    @include tr;
+    @include hover {
+      color: var(--color-accent-10);
+    }
+
+    svg {
+      path {
+        fill: currentColor;
+      }
+    }
+  }
+
+  &__title {
+    text-align: center;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 178%;
+    color: var(--color-dark);
+    @include xs-block {
+      font-size: 20px;
+      max-width: 20ch;
+    }
+  ;
+  }
+
+  &__link {
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 12px 40px;
+    font-size: 23px;
+    text-align: center;
+    color: var(--color-dark);
+    background: linear-gradient(90deg, #fff41c 0%, #ffb235 100%);
+    @include tr;
+    @include hover {
+      opacity: .7;
+    }
+  ;
+    @include xs-block {
+      align-self: stretch;
+      margin-inline: 10px;
+      font-size: 18px;
+    }
+  ;
+  }
+
+  &__pag {
+    margin-top: 35px;
+    position: static;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    @include xs-block {
+      margin-top: 20px;
+      gap: 10px;
+    }
+  ;
+  }
+
+  &__bullet {
+    width: 70px;
+    height: 4px;
+    background: #b8b8b8;
+    opacity: 0.6;
+    @include tr;
+    @include xs-block {
+      width: 33px;
+      height: 4px;
+    }
+  ;
+
+    &.active {
+      opacity: 1;
+      background: #343434;
+    }
+  }
+}
