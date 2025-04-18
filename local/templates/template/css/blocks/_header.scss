@@ -2,7 +2,7 @@
 
 .header {
 
-  &__top{
+  &__top {
     border-radius: 100px;
     padding: 10px 40px 10px 10px;
     background: var(--color-light);
@@ -11,61 +11,77 @@
     justify-content: space-between;
     gap: 20px;
 
-    @include xs-block{
+    @include xs-block {
       padding: 8px 16px 8px 8px;
       gap: 4px;
       justify-content: initial;
-    };
+    }
+  ;
   }
 
-  &__logo{
-    @include xs-block{
+  &__logo {
+    @include xs-block {
       width: 74px;
       margin-right: auto;
-    };
+    }
+  ;
   }
 
-  &__socials{
-    .socials{
-      &__link{
-        span{
-          @include xs-block{
+  &__socials {
+    .socials {
+      @include xs-block {
+        gap: 4px;
+      }
+    ;
+
+      &__link {
+        @include xs-block {
+          width: 24px;
+        }
+      ;
+
+        span {
+          @include xs-block {
             display: none;
-          };
+          }
         }
       }
     }
   }
 
-  &__phone{
-    a{
+  &__phone {
+    a {
       font-family: var(--second-family);
       font-weight: 500;
       font-size: 18px;
-      @include hover{
+      @include hover {
         color: var(--color-red);
-      };
-      @include xs-block{
+      }
+    ;
+      @include xs-block {
         font-size: 16px;
-      };
+      }
+    ;
     }
   }
 
-  &__menu{
-    @include md-block{
+  &__menu {
+    @include md-block {
       display: none;
-    };
+    }
+
   }
 
-  &__bottom{
+  &__bottom {
     margin-top: 10px;
     display: none;
     background: var(--color-light);
     border-radius: 100px;
 
-    @include md-block{
+    @include md-block {
       display: flex;
       justify-content: center;
-    };
+    }
+
   }
 }

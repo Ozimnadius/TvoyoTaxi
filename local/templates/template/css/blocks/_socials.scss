@@ -3,9 +3,7 @@
 .socials{
   display:flex;
   gap: 10px;
-  @include xs-block{
-    gap: 4px;
-  };
+
 
   &__link{
     display: flex;
@@ -13,9 +11,6 @@
     gap: 4px;
     @include hover{
       color: var(--color-red);
-    };
-    @include xs-block{
-      width: 24px;
     };
   }
 }

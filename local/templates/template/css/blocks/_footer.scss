@@ -1,5 +1,105 @@
 @use "../helpers/index" as *;
 
-.footer{
+.footer {
+  border-radius: 39px 39px 0 0;
+  padding: 10px 20px;
+  background: var(--color-light);
+  display: grid;
+  gap: 20px;
+  @include md-block {
+    gap: 10px;
+  }
+;
 
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    @include md-block {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      grid-template-areas: 'logo sicials phone' 'menu menu menu';
+      gap: 10px 20px;
+    }
+    @include xs-block {
+      grid-template-columns: 100%;
+      grid-template-areas: 'logo' 'sicials' 'phone' 'menu';
+    }
+  ;
+
+  }
+
+  &__logo {
+    grid-area: logo;
+  }
+
+  &__menu {
+    grid-area: menu;
+    @include md-block {
+      display: flex;
+      justify-content: center;
+      background: var(--color-light-20);
+      border-radius: 100vmax;
+    }
+  ;
+    @include xs-block {
+      border-radius: 10px;
+    }
+
+    .menu {
+      ul {
+        li {
+          @include xs-block {
+            padding: 8px 6px;
+          }
+        ;
+        }
+
+      }
+    }
+  }
+
+  &__socials {
+    grid-area: sicials;
+    @include md-block {
+      display: flex;
+      justify-content: center;
+    }
+  ;
+    @include xs-block {
+      justify-content: start;
+    }
+  ;
+  }
+
+  &__phone {
+    grid-area: phone;
+  }
+
+
+  &__bottom {
+    border-radius: 100vmax;
+    padding: 8px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 20px;
+    justify-content: space-between;
+    background: var(--color-light-20);
+    @include xs-block {
+      border-radius: 10px;
+    }
+  }
+
+  &__item {
+    font-size: 14px;
+    color: var(--color-grey-10);
+
+    a {
+      @include hover {
+        color: var(--color-red);
+      }
+    }
+  }
 }

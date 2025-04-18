@@ -6,7 +6,6 @@
     @include xs-block {
       margin-top: 10px;
     }
-  ;
   }
 
   &__advantages {
@@ -14,11 +13,9 @@
     @include md-block {
       margin-top: 60px;
     }
-  ;
     @include xs-block {
       margin-top: 40px;
     }
-  ;
   }
 
   &__calculator {
@@ -35,9 +32,9 @@
 
   &__conditions {
     margin-top: 60px;
-    @include xs-block{
+    @include xs-block {
       margin-top: 40px;
-    };
+    }
   }
 
   &__requirements {
@@ -46,14 +43,15 @@
 
   &__faq {
     margin-top: 60px;
-    @include md-block{
+    @include md-block {
       margin-top: 40px;
-    };
-    @include xs-block{
+    }
+    @include xs-block {
       margin-top: 30px;
-    };
+    }
   }
 
   &__feedback {
+    margin-top: 60px;
   }
 }
