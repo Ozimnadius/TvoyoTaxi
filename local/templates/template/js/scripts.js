@@ -1,4 +1,5 @@
 window.addEventListener('DOMContentLoaded', function () {
+
     new Events();
     new Calculator();
     new Steps();
@@ -10,7 +11,9 @@ window.addEventListener('DOMContentLoaded', function () {
 });
 
 function initLibs() {
-
+    Inputmask("+7(999)-999-99-99", {
+        // clearIncomplete: true
+    }).mask('input[type="tel"]');
 }
 
 function initSliders() {
@@ -62,18 +65,17 @@ class Events {
 
         this.events = new Set();
 
-        document.addEventListener("DOMContentLoaded", () => {
-            document.querySelectorAll(`[data-event]`).forEach(i => {
-                i.dataset.event.split(',').forEach((event) => {
-                    let [eventType, eventName] = event.split('.');
+        document.querySelectorAll(`[data-event]`).forEach(i => {
 
-                    if (!this[eventName]) return;
+            i.dataset.event.split(',').forEach((event) => {
+                let [eventType, eventName] = event.split('.');
 
-                    this.events.add(eventType);
-                });
+                if (!this[eventName]) return;
+
+                this.events.add(eventType);
             });
-            this.init();
         });
+        this.init();
     }
 
     /**
@@ -114,7 +116,6 @@ class Events {
             method: 'POST',
             body: new FormData(elem)
         }).then(response => response.json()).then(function (data) {
-
             if (data.status) {
                 elem.reset();
                 alert("Мы скоро свяжемся с вами.", "Спасибо!");
@@ -147,7 +148,6 @@ class Calculator {
 
         this.resultItems = this.root.querySelectorAll(this.selectors.resultItems);
 
-        console.log(this.data);
         this.bindEvents();
 
         this.init();
@@ -199,7 +199,7 @@ class Calculator {
     }
 
     get total() {
-        let total = this.hour * this.day * this.price;
+        let total = Math.round(this.hour * this.day * this.price * (30 / 7));
         total = total.toLocaleString('ru-RU');
         return total + '₽';
     }

@@ -137,8 +137,6 @@
             </div>
 
         </div>
-        <button class="calculator__btn" type="button">
-            Начать зарабатывать
-        </button>
+        <a href="#feedback" class="calculator__btn">Начать зарабатывать</a>
     </form>
 </div>
