@@ -2,7 +2,7 @@
 /** @var array $arParams */
 /** @var array $arResult */
 ?>
-<div class="calculator" >
+<div class="calculator">
     <div class="calculator__top">
         <h2 class="calculator__title">
             Калькулятор
@@ -14,7 +14,23 @@
     </div>
     <form action="#"
           class="calculator__form"
-          data-calculator
+          data-calculator='<?=json_encode([
+              'tarrifs' => [
+                  'econom' => '800',
+                  'comfort' => '1000',
+                  'comfort-plus' => '1300'
+              ],
+              'cars' => [
+                  'Kia' => [
+                      'Rio' => 'econom',
+                      'Ceed' => 'comfort',
+                      'K5' => 'comfort-plus'
+                  ],
+                  'Toyota' => [
+                      'Camry' => 'comfort-plus'
+                  ]
+              ]
+          ]);?>'
     >
         <div class="calculator__cars">
             <div class="calculator__select-wrapper">
@@ -24,18 +40,6 @@
                         data-calculator-mark
                 >
                     <option value="">Выбрать марку</option>
-                    <option>Skoda</option>
-                    <option>Kia</option>
-                    <option>Volkswagen</option>
-                    <option>Chery</option>
-                    <option>Nissan</option>
-                    <option>Москвич</option>
-                    <option>Geely</option>
-                    <option>Hyundai</option>
-                    <option>Toyota</option>
-                    <option>JAC</option>
-                    <option>Haval</option>
-                    <option>FAW</option>
                 </select>
             </div>
             <div class="calculator__select-wrapper">
@@ -45,11 +49,6 @@
                         data-calculator-model
                 >
                     <option value="">Выбрать модель авто</option>
-                    <option>Rio</option>
-                    <option>Cerato</option>
-                    <option>Ceed 2020</option>
-                    <option>Optima</option>
-                    <option>K5</option>
                 </select>
             </div>
         </div>
@@ -57,9 +56,9 @@
             <div class="calculator__count">
                 <div class="calculator__count-name">Рабочих дней в неделю</div>
                 <div class="calculator__count-items">
-                    <? foreach ([1, 2, 3, 4, 5, 6, 7] as $key=>$i): ?>
+                    <? foreach ([1, 2, 3, 4, 5, 6, 7] as $key => $i): ?>
                         <label class="calculator__count-item">
-                            <input type="radio" name="day" value="<?= $i ?>" <? if ($key==0): ?>checked<? endif; ?>>
+                            <input type="radio" name="day" value="<?= $i ?>" <? if ($key == 0): ?>checked<? endif; ?>>
                             <span class="calculator__count-fake">
                             <?= $i ?>
                         </span>
@@ -70,9 +69,9 @@
             <div class="calculator__count">
                 <div class="calculator__count-name">Часов в день</div>
                 <div class="calculator__count-items">
-                    <? foreach ([8, 9, 10, 11, 12] as $key=>$i): ?>
+                    <? foreach ([8, 9, 10, 11, 12] as $key => $i): ?>
                         <label class="calculator__count-item">
-                            <input type="radio" name="hour" value="<?= $i ?>" <? if ($key==0): ?>checked<? endif; ?>>
+                            <input type="radio" name="hour" value="<?= $i ?>" <? if ($key == 0): ?>checked<? endif; ?>>
                             <span class="calculator__count-fake">
                             <?= $i ?>
                         </span>

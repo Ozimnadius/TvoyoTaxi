@@ -728,6 +728,7 @@ button {
   right: 18px;
   width: 32px;
   height: 32px;
+  pointer-events: none;
 }
 .calculator__select {
   border: 1px solid #CBCBCB;
@@ -992,6 +993,7 @@ button {
   }
 }
 .cars__item {
+  display: none;
   order: 2;
 }
 .cars__item:nth-child(-n+4) {
@@ -1020,6 +1022,9 @@ button {
   .cars__item--full {
     grid-column: span 1;
   }
+}
+.cars__item.active {
+  display: block;
 }
 
 .car {

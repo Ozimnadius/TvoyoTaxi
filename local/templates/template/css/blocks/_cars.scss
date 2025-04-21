@@ -68,6 +68,7 @@
   }
 
   &__item {
+    display: none;
     order: 2;
 
     &:nth-child(-n+4) {
@@ -94,6 +95,10 @@
       @include xs-block {
         grid-column: span 1;
       }
+    }
+
+    &.active{
+      display: block;
     }
   }
 }

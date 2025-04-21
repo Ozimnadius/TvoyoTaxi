@@ -10,29 +10,29 @@
         <div class="cars__btns">
             <button class="cars__btn"
                     type="button"
-                    data-cars-type="econom">
+                    data-cars-btn="econom">
                 Эконом
             </button>
             <button class="cars__btn"
                     type="button"
-                    data-cars-type="comfort">
+                    data-cars-btn="comfort">
                 Комфорт
             </button>
             <button class="cars__btn"
                     type="button"
-                    data-cars-type="comfort-plus">
+                    data-cars-btn="comfort-plus">
                 Комфорт+
             </button>
             <button class="cars__btn active"
                     type="button"
-                    data-cars-type="all">
+                    data-cars-btn="all">
                 Все
             </button>
         </div>
     </div>
     <div class="cars__list">
         <? foreach ($arResult as $i): ?>
-            <div class="cars__item" data-tabs-type="<?= $i['type'] ?>">
+            <div class="cars__item active" data-cars-item="<?= $i['type'] ?>">
                 <div class="car">
                     <div class="car__top">
                         <div class="car__type"><?= $i['typeName'] ?></div>
@@ -69,7 +69,7 @@
                 </div>
             </div>
         <? endforeach; ?>
-        <div class="cars__item cars__item--full">
+        <div class="cars__item cars__item--full active" data-cars-item="banner">
             <div class="car-banner">
                 <picture>
                     <source srcset="/upload/images/cars/banner-mobile.webp" media="(max-width: 767.98px)"/>
