@@ -53,11 +53,12 @@
     </div>
     <div class="feedback__item">
         <div class="feedback__img">
-            <img src="/upload/images/map.webp"
-                 width="575"
-                 height="547"
-                 loading="lazy"
-                 alt="feedback">
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A9519898de8a5b5559773f352bb68ccaf4c6f8c3b9fad15802aa2929101394409&amp;source=constructor"></iframe>
+<!--            <img src="/upload/images/map.webp"-->
+<!--                 width="575"-->
+<!--                 height="547"-->
+<!--                 loading="lazy"-->
+<!--                 alt="feedback">-->
         </div>
     </div>
 </div>
